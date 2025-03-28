@@ -489,16 +489,15 @@
                 // Remove loading animation
                 removeLoadingAnimation();
                 
-                // Add bot response
-                if (data.response) {
+                if (response.ok && data.response) {
                     addMessage(data.response, false);
                 } else {
-                    throw new Error('No response from server');
+                    addMessage(data.response || 'Sorry, something went wrong. Please try again.', false);
                 }
             } catch (error) {
                 console.error('Error:', error);
                 removeLoadingAnimation();
-                addMessage('Sorry, something went wrong. Please try again.', false);
+                addMessage('Network error. Please check your connection and try again.', false);
             }
         }
 
