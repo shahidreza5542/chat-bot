@@ -23,6 +23,15 @@
             z-index: 1;
         }
 
+        #chat-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
         body {
             min-height: 100vh;
             display: flex;
@@ -51,6 +60,7 @@
             overflow: hidden;
             border: 1px solid #333;
             backdrop-filter: blur(10px);
+            position: relative;
         }
 
         .header {
@@ -60,6 +70,8 @@
             text-align: center;
             border-bottom: 1px solid #333;
             animation: slideDown 0.5s ease-out;
+            position: relative;
+            z-index: 1;
         }
 
         .header h1 {
@@ -82,6 +94,8 @@
             padding: 20px;
             overflow-y: auto;
             background: rgba(17, 17, 17, 0.7);
+            position: relative;
+            z-index: 1;
         }
 
         .chat-messages::-webkit-scrollbar {
@@ -103,6 +117,8 @@
             opacity: 0;
             animation-fill-mode: forwards;
             backdrop-filter: blur(5px);
+            position: relative;
+            z-index: 1;
         }
 
         .user-message {
@@ -127,6 +143,8 @@
             display: flex;
             gap: 10px;
             animation: slideUp 0.5s ease-out;
+            position: relative;
+            z-index: 1;
         }
 
         .input-container input {
@@ -264,6 +282,7 @@
     <div id="particles-js"></div>
     <div class="container">
         <div class="chat-container">
+            <div id="chat-particles"></div>
             <div class="header">
                 <h1>AI Chatbot</h1>
                 <p>Ask me anything in Hindi or English!</p>
@@ -280,6 +299,7 @@
         </div>
     </div>
     <script>
+        // Configure main background particles
         particlesJS('particles-js', {
             particles: {
                 number: {
@@ -332,6 +352,77 @@
                         mode: 'push'
                     },
                     resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Configure chat box particles
+        particlesJS('chat-particles', {
+            particles: {
+                number: {
+                    value: 40,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#ffffff'
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 0.3,
+                    random: false
+                },
+                size: {
+                    value: 2,
+                    random: true
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 100,
+                    color: '#ffffff',
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'bubble'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    resize: true
+                },
+                modes: {
+                    bubble: {
+                        distance: 100,
+                        size: 4,
+                        duration: 2,
+                        opacity: 0.8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 100,
+                        duration: 0.4
+                    }
                 }
             },
             retina_detect: true
@@ -392,10 +483,6 @@
                         message: message
                     }),
                 });
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
 
                 const data = await response.json();
                 
