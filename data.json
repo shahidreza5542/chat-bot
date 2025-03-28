@@ -1,0 +1,62 @@
+{
+    "conversations": [
+        {
+            "patterns": ["hello", "hi", "hey", "namaste", "नमस्ते", "हाय", "हैलो"],
+            "responses": [
+                "Hello! How can I help you?",
+                "Hi there! Ask me anything!",
+                "नमस्ते! मैं आपकी कैसे मदद कर सकता हूं?",
+                "हाय! कुछ भी पूछें!"
+            ]
+        },
+        {
+            "patterns": ["how are you", "kaise ho", "कैसे हो", "कैसा चल रहा है"],
+            "responses": [
+                "I'm doing great, thanks for asking!",
+                "मैं बढ़िया हूं, पूछने के लिए धन्यवाद!",
+                "सब बहुत अच्छा चल रहा है!"
+            ]
+        },
+        {
+            "patterns": ["what is your name", "who are you", "tumhara naam kya hai", "तुम्हारा नाम क्या है", "आप कौन हो"],
+            "responses": [
+                "I'm your AI friend!",
+                "मैं आपका AI दोस्त हूं!",
+                "मेरा नाम AI चैटबॉट है!"
+            ]
+        },
+        {
+            "patterns": ["what can you do", "help me", "मदद करो", "तुम क्या कर सकते हो"],
+            "responses": [
+                "I can chat with you in Hindi and English! Ask me anything!",
+                "मैं हिंदी और अंग्रेजी में बात कर सकता हूं! कुछ भी पूछें!",
+                "आप मुझसे किसी भी भाषा में बात कर सकते हैं!"
+            ]
+        },
+        {
+            "patterns": ["bye", "goodbye", "alvida", "अलविदा", "बाय", "फिर मिलेंगे"],
+            "responses": [
+                "Goodbye! Take care!",
+                "See you later!",
+                "अलविदा! अपना ख्याल रखना!",
+                "फिर मिलेंगे! बाय!"
+            ]
+        },
+        {
+            "patterns": ["weather", "mausam", "मौसम"],
+            "responses": [
+                "I'm sorry, I can't check the weather.",
+                "मैं मौसम की जानकारी नहीं दे सकता।",
+                "मौसम की जानकारी के लिए कृपया मौसम ऐप देखें।"
+            ]
+        },
+        {
+            "patterns": ["tell me a joke", "joke sunao", "कोई जोक सुनाओ"],
+            "responses": [
+                "Why did the scarecrow win an award? Because he was outstanding in his field!",
+                "टीचर: तुम्हारा होमवर्क कहाँ है?\nस्टूडेंट: वो कुत्ता खा गया।\nटीचर: बकवास मत करो!\nस्टूडेंट: सच में, मैंने पूरी रात जागकर बनाया था इसलिए मैं सो गया, फिर कुत्ते ने खा लिया।",
+                "डॉक्टर: आपको क्या तकलीफ है?\nमरीज: डॉक्टर साहब, मैं कुछ भी भूल जाता हूं।\nडॉक्टर: कब से?\nमरीज: कब से क्या?"
+            ]
+        }
+    ]
+}
